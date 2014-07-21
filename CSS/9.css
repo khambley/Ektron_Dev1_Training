@@ -1,0 +1,11 @@
+﻿/*styles for 1170 view*/
+.ektron-partners-layout { position:relative; overflow:hidden; padding-top:20px; }
+.ektron-partner-set { width:50%; float:left; }
+.ektron-partner { padding: 10px 0; }
+@media (min-width: 980px) and (max-width: 1199px) /*for 940*/
+{
+    .ektron-partners-layout { padding-top:35px; }
+    .ektron-partner-set { width:100%; float:left; position:relative; }
+    .ektron-partner { padding:0; float:left; width:25%; text-align:center; }
+    .ektron-partner-set-alternate { padding-left:12.5%; margin-top:-55px; }
+}

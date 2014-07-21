@@ -1,0 +1,148 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MainMaster.master.cs" Inherits="Source_Master_Pages_MainMaster" %>
+
+<%@ Register Assembly="Ektron.Cms.Controls" Namespace="Ektron.Cms.Controls" TagPrefix="CMS" %>
+<%@ Register Src="~/Source/Controls/MainMenu.ascx" TagPrefix="uc1" TagName="MainMenu" %>
+<%@ Register Src="~/Source/Controls/FooterSocialMenu.ascx" TagPrefix="uc1" TagName="FooterSocialMenu" %>
+
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+        <link rel="Stylesheet" type="text/css" href="/Source/css/com.css" />
+
+    <!--[if IE 9]>
+        <link rel="Stylesheet" type="text/css" href="/Source/css/ie9.css" />
+    <![endif]-->
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="//css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+        <link rel="Stylesheet" type="text/css" href="/Source/css/ie.css" />
+        <script type="text/javascript">
+            $(document).ready(function(){
+                setTimeout('Ektron.Com.Functions.SwapImageForAltText(".ektron-btn-convert-1 a img")', 1000);
+                setTimeout('Ektron.Com.Functions.SwapImageForAltText(".ektron-btn-convert-2 a img")', 1000);
+                setTimeout('Ektron.Com.Functions.SetCTAImageDimensions(".hs-cta-wrapper .hs-cta-node a img")', 1000);
+            });
+        </script>
+    <![endif]-->
+    <!--[if IE 7]>
+        <link rel="Stylesheet" type="text/css" href="/Source/css/ie7.css" />
+    <![endif]-->
+    <CMS:MetaData ID="MetaData1" runat="server" DynamicParameter="pageid" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <!--Content Place Holder-->
+        <asp:ContentPlaceHolder ID="cphPageHost" runat="server"></asp:ContentPlaceHolder>
+    <div id="pagewrapper">
+        <!-- Header Area -->
+        <div class="ektron-header">
+            <div class="ektron-header-utility ektron-black-texture">
+                <div class="container">
+                    <a class="brand offset1" href="/Home" title="Ektron Home">
+                    <figure class="ektron-logo-figure" data-media="/images/content/logo/logoSmall.jpg"
+                        data-media768="/images/content/logo/logo.png">
+                            <noscript>
+                                <img id="uxLogoImage" src="/images/content/logo/logo.png" alt="Ektron, Inc."/>
+                            </noscript>
+                            <img src="/images/Content/logo/logo.png" alt="Ektron, Inc." />
+                        </figure>
+                    </a>
+                     <div class="pull-right hidden-phone">
+                        <asp:TextBox ID="txtSearch" runat="server" CssClass="span3 ektron-rounded-input ektron-search-input" />
+                        <asp:ImageButton runat="server" ID="btnSearch" CssClass="ektron-inset-btn" 
+                            ImageUrl="/images/Magnifier.png" onclick="btnSearch_Click" />
+                    </div>
+                    <div class="hidden-phone">
+                        <div class="ektron-utility-nav">
+                            <div class="ektron-utility-link">
+                                <a href="/login/">Login</a>
+                            </div>
+                            <div class="ektron-utility-link">
+                                <input type="image" name="ctl00$Lang1$btnLangUk" id="ctl00_Lang1_btnLangUk" src="/images/UKflag.png" />
+                            </div>
+                            <div class="ektron-utility-link">
+                                <input type="image" name="ctl00$Lang1$btnLangFr" id="ctl00_Lang1_btnLangFr" src="/images/FRflag.png" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ektron-menu-toggle visible-phone pull-right">
+                        <a href="#">
+                            <img src="/images/menu-button-closed.png" alt="Menu" /></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Navigation -->
+            <div class="ektron-header-navigation">
+                <div class="ektron-navigation-container">
+                    <div class="nav-collapse ektron-nav-collapse container">
+                        <div class=" ektron-navigation-search visible-phone">
+                            <input name="ctl00$txtSearchPhone" type="text" id="ctl00_txtSearchPhone" class="span3 ektron-rounded-input ektron-search-input" />
+                            <input type="submit" name="ctl00$btnSearchPhone" value="" id="ctl00_btnSearchPhone"
+                                class="ektron-inset-btn" />
+                        </div>
+                        
+                        <uc1:MainMenu runat="server" ID="Menu1" />
+                        <div id="ctl00_uxNavigation_uxNavigation_Utility1_uxUtilityNavWrapper" class="ektron-utility-invert visible-phone">
+                            <div class="ektron-utility-nav">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Navigation End -->
+        </div>
+        <!-- Header Area End -->
+        <script id="EktronScriptBlockglrpsmenu" type="text/javascript">
+            // adding jquery styles to menu user control
+            Ektron.ready(function (event, eventName) {
+                $(".ektron-navigation-container").find("ul").first().addClass("ektron-nav pull-right");
+                $(".ektron-navigation-container").find("ul").first().children("li").addClass("ektron-navigation-dropdown");
+                $(".ektron-navigation-container").find("ul").first().children("li").children("a").addClass("ektron-dropdown-toggle");
+                Ektron.Com.Navigation.init();
+            });
+        </script>
+        <!-- Start Carousel -->
+        <script type="text/javascript">
+            Ektron.ready(function (event, eventName) {
+                Ektron.PFWidgets.EktronMobileSlider.init({ ContainerID: 'divswipecontainer', SwipeID: 'swipeux', GalleryEnabled: true, InitColorLeft: 'ffffff', InitColorRight: 'ffffff' });
+            });
+        </script>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+
+        </asp:ContentPlaceHolder>
+        <!-- End Carousel -->
+        <!-- Start Content Area -->
+        
+             <!-- End Content Area -->
+        <footer>
+            <!-- Start Footer -->
+            <div class="container">
+                <div class="row">
+                    <div class="span8 ektron-huge-top-padding hidden-phone">
+                        <div class="ektron-resource-wrapper">
+                            <div class="ektron-resources copyright">
+                                <p>  © Ektron, Inc 2013. All rights reserved.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span4 ektron-contact-column">
+                        <div class="ektron-large-padding ektron-724-med-padding">
+                            <div class="ektron-social-links">
+                                <uc1:FooterSocialMenu runat="server" ID="FooterSocialMenu" />
+                            </div>
+                            <div class="ektron-footer-content"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Footer -->
+        </footer>
+    </div>
+    </form>
+</body>
+</html>
